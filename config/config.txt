@@ -99,7 +99,7 @@ NORESPAWN
 # DONT_DEL_NEWMOB
 
 ## set a hosted by name for unix platforms
-HOSTEDBY Admiral Hippie
+HOSTEDBY not Admiral Hippie
 
 ## Set to jobban "Guest-" accounts from Captain, HoS, HoP, CE, RD, CMO, Warden, Security, Detective, and AI positions.
 ## Set to 1 to jobban them from those positions, set to 0 to allow them.
@@ -125,19 +125,19 @@ GUEST_BAN
 SERVER
 
 ## forum address
-FORUMURL http://www.hippie-station-13.com
+FORUMURL
 
 ## Wiki address
-WIKIURL http://wiki.hippie-station-13.com
+WIKIURL
 
 ##Rules address
-RULESURL http://hippie-station-13.com/misc/darules.shtml
+RULESURL
 
 ##Github address
-GITHUBURL https://github.com/HippieStationCode/HippieStation13
+GITHUBURL
 
 ## Ban appeals URL - usually for a forum or wherever people should go to contact your admins.
-BANAPPEALS http://www.hippie-station-13.com/forums/viewforum.php?f=8
+BANAPPEALS
 
 ## TeamSpeak URL, allows the client to connect directly to the Teamspeak server of your choice. Typically the link for a TS3 url is ts3server://[TS IP/ADDRESS]?port=[PORTNUM]
 #TEAMSPEAKURL [ADDRESS]
