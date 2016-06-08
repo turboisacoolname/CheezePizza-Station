@@ -88,7 +88,7 @@ datum/species/human/spec_death(gibbed, mob/living/carbon/human/H)
 /datum/species/lizard/handle_speech(message)
 	// jesus christ why
 	if(copytext(message, 1, 2) != "*")
-		message = replacetext(message, "s", "sss")
+		message = regEx_replacetext(message, "s", "sss")
 
 	return message
 
@@ -604,7 +604,7 @@ datum/species/human/spec_death(gibbed, mob/living/carbon/human/H)
 		return 1
 
 /datum/species/fly/handle_speech(message)
-	return replacetext(message, "z", stutter("zz"))
+	return regEx_replacetext(message, "z", stutter("zz"))
 
 /*
  SKELETONS

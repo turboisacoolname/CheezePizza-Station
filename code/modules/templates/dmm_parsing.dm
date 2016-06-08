@@ -167,7 +167,7 @@
 		var/value = var_overrides[key]
 
 		if(istext(value) && (text2num(value) == null))
-			value = replacetext(value, "\"", "")
+			value = regEx_replacetext(value, "\"", "")
 
 			if(copytext(value, 1, 9) == "newlist(")
 				var_overrides[key] = text2list(copytext(value, 9, findtext(value, ")")), ",")

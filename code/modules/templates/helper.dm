@@ -8,7 +8,7 @@ var/list/_TempTemplateTurfs = list()
 	else
 		var/list/categories = flist("[config.directory]/")
 		for(var/c in categories)
-			categories[categories.Find(c)] = replacetext(c, "/", "")
+			categories[categories.Find(c)] = regEx_replacetext(c, "/", "")
 		return categories
 
 /datum/subsystem/template/proc/GetAllTemplates()

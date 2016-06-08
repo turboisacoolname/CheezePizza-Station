@@ -142,12 +142,12 @@ var/list/spells = typesof(/obj/effect/proc_holder/spell) //needed for the badmin
 			if(prob(50))//Auto-mute? Fuck that noise
 				user.say(invocation)
 			else
-				user.say(replacetext(invocation," ","`"))
+				user.say(regEx_replacetext(invocation," ","`"))
 		if("whisper")
 			if(prob(50))
 				user.whisper(invocation)
 			else
-				user.whisper(replacetext(invocation," ","`"))
+				user.whisper(regEx_replacetext(invocation," ","`"))
 		if("emote")
 			user.visible_message(invocation, invocation_emote_self) //same style as in mob/living/emote.dm
 

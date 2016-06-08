@@ -88,7 +88,7 @@
 		return
 	for(var/i = 1, i <= C + processor.rating_amount, i++)
 		new S.coretype(loc)
-		feedback_add_details("slime_core_harvested","[replacetext(S.colour," ","_")]")
+		feedback_add_details("slime_core_harvested","[regEx_replacetext(S.colour," ","_")]")
 	..()
 
 /datum/food_processor_process/mob/slime/input = /mob/living/simple_animal/slime

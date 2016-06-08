@@ -203,40 +203,40 @@
 
 //	t = copytext(sanitize(t),1,MAX_MESSAGE_LEN)
 
-	t = replacetext(t, "\[center\]", "<center>")
-	t = replacetext(t, "\[/center\]", "</center>")
-	t = replacetext(t, "\[br\]", "<BR>")
-	t = replacetext(t, "\[b\]", "<B>")
-	t = replacetext(t, "\[/b\]", "</B>")
-	t = replacetext(t, "\[i\]", "<I>")
-	t = replacetext(t, "\[/i\]", "</I>")
-	t = replacetext(t, "\[u\]", "<U>")
-	t = replacetext(t, "\[/u\]", "</U>")
-	t = replacetext(t, "\[large\]", "<font size=\"4\">")
-	t = replacetext(t, "\[/large\]", "</font>")
-	t = replacetext(t, "\[sign\]", "<font face=\"[SIGNFONT]\"><i>[user.real_name]</i></font>")
-	t = replacetext(t, "\[field\]", "<span class=\"paper_field\"></span>")
+	t = regEx_replacetext(t, "\[center\]", "<center>")
+	t = regEx_replacetext(t, "\[/center\]", "</center>")
+	t = regEx_replacetext(t, "\[br\]", "<BR>")
+	t = regEx_replacetext(t, "\[b\]", "<B>")
+	t = regEx_replacetext(t, "\[/b\]", "</B>")
+	t = regEx_replacetext(t, "\[i\]", "<I>")
+	t = regEx_replacetext(t, "\[/i\]", "</I>")
+	t = regEx_replacetext(t, "\[u\]", "<U>")
+	t = regEx_replacetext(t, "\[/u\]", "</U>")
+	t = regEx_replacetext(t, "\[large\]", "<font size=\"4\">")
+	t = regEx_replacetext(t, "\[/large\]", "</font>")
+	t = regEx_replacetext(t, "\[sign\]", "<font face=\"[SIGNFONT]\"><i>[user.real_name]</i></font>")
+	t = regEx_replacetext(t, "\[field\]", "<span class=\"paper_field\"></span>")
 
 	if(!iscrayon)
-		t = replacetext(t, "\[*\]", "<li>")
-		t = replacetext(t, "\[hr\]", "<HR>")
-		t = replacetext(t, "\[small\]", "<font size = \"1\">")
-		t = replacetext(t, "\[/small\]", "</font>")
-		t = replacetext(t, "\[list\]", "<ul>")
-		t = replacetext(t, "\[/list\]", "</ul>")
+		t = regEx_replacetext(t, "\[*\]", "<li>")
+		t = regEx_replacetext(t, "\[hr\]", "<HR>")
+		t = regEx_replacetext(t, "\[small\]", "<font size = \"1\">")
+		t = regEx_replacetext(t, "\[/small\]", "</font>")
+		t = regEx_replacetext(t, "\[list\]", "<ul>")
+		t = regEx_replacetext(t, "\[/list\]", "</ul>")
 
 		t = "<font face=\"[PEN_FONT]\" color=[P.colour]>[t]</font>"
 	else // If it is a crayon, and he still tries to use these, make them empty!
-		t = replacetext(t, "\[*\]", "")
-		t = replacetext(t, "\[hr\]", "")
-		t = replacetext(t, "\[small\]", "")
-		t = replacetext(t, "\[/small\]", "")
-		t = replacetext(t, "\[list\]", "")
-		t = replacetext(t, "\[/list\]", "")
+		t = regEx_replacetext(t, "\[*\]", "")
+		t = regEx_replacetext(t, "\[hr\]", "")
+		t = regEx_replacetext(t, "\[small\]", "")
+		t = regEx_replacetext(t, "\[/small\]", "")
+		t = regEx_replacetext(t, "\[list\]", "")
+		t = regEx_replacetext(t, "\[/list\]", "")
 
 		t = "<font face=\"[CRAYON_FONT]\" color=[P.colour]><b>[t]</b></font>"
 
-//	t = replacetext(t, "#", "") // Junk converted to nothing!
+//	t = regEx_replacetext(t, "#", "") // Junk converted to nothing!
 
 //Count the fields
 	var/laststart = 1

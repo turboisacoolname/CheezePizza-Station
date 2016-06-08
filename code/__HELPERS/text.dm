@@ -194,10 +194,10 @@
  */
 // See bygex.dm
 #ifndef USE_BYGEX
-/proc/replacetext(text, find, replacement)
+/proc/regEx_replacetext(text, find, replacement)
 	return list2text(text2list(text, find), replacement)
 
-/proc/replacetextEx(text, find, replacement)
+/proc/regEx_replacetextEx(text, find, replacement)
 	return list2text(text2listEx(text, find), replacement)
 #endif
 
@@ -387,28 +387,28 @@ var/list/binary = list("0","1")
 	if(length(t) < 1)		//No input means nothing needs to be parsed
 		return
 
-	t = replacetext(t, "\[center\]", "<center>")
-	t = replacetext(t, "\[/center\]", "</center>")
-	t = replacetext(t, "\[br\]", "<BR>")
-	t = replacetext(t, "\[b\]", "<B>")
-	t = replacetext(t, "\[/b\]", "</B>")
-	t = replacetext(t, "\[i\]", "<I>")
-	t = replacetext(t, "\[/i\]", "</I>")
-	t = replacetext(t, "\[u\]", "<U>")
-	t = replacetext(t, "\[/u\]", "</U>")
-	t = replacetext(t, "\[large\]", "<font size=\"4\">")
-	t = replacetext(t, "\[/large\]", "</font>")
+	t = regEx_replacetext(t, "\[center\]", "<center>")
+	t = regEx_replacetext(t, "\[/center\]", "</center>")
+	t = regEx_replacetext(t, "\[br\]", "<BR>")
+	t = regEx_replacetext(t, "\[b\]", "<B>")
+	t = regEx_replacetext(t, "\[/b\]", "</B>")
+	t = regEx_replacetext(t, "\[i\]", "<I>")
+	t = regEx_replacetext(t, "\[/i\]", "</I>")
+	t = regEx_replacetext(t, "\[u\]", "<U>")
+	t = regEx_replacetext(t, "\[/u\]", "</U>")
+	t = regEx_replacetext(t, "\[large\]", "<font size=\"4\">")
+	t = regEx_replacetext(t, "\[/large\]", "</font>")
 	if(user)
-		t = replacetext(t, "\[sign\]", "<font face=\"[signfont]\"><i>[user.real_name]</i></font>")
+		t = regEx_replacetext(t, "\[sign\]", "<font face=\"[signfont]\"><i>[user.real_name]</i></font>")
 	else
-		t = replacetext(t, "\[sign\]", "")
-	t = replacetext(t, "\[field\]", "<span class=\"paper_field\"></span>")
+		t = regEx_replacetext(t, "\[sign\]", "")
+	t = regEx_replacetext(t, "\[field\]", "<span class=\"paper_field\"></span>")
 
-	t = replacetext(t, "\[*\]", "<li>")
-	t = replacetext(t, "\[hr\]", "<HR>")
-	t = replacetext(t, "\[small\]", "<font size = \"1\">")
-	t = replacetext(t, "\[/small\]", "</font>")
-	t = replacetext(t, "\[list\]", "<ul>")
-	t = replacetext(t, "\[/list\]", "</ul>")
+	t = regEx_replacetext(t, "\[*\]", "<li>")
+	t = regEx_replacetext(t, "\[hr\]", "<HR>")
+	t = regEx_replacetext(t, "\[small\]", "<font size = \"1\">")
+	t = regEx_replacetext(t, "\[/small\]", "</font>")
+	t = regEx_replacetext(t, "\[list\]", "<ul>")
+	t = regEx_replacetext(t, "\[/list\]", "</ul>")
 
 	return t

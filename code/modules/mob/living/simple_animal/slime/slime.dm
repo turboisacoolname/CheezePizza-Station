@@ -81,7 +81,7 @@
 		icon_dead = "[icon_state] dead"
 		real_name = name
 		slime_mutation = mutation_table(colour)
-		var/sanitizedcolour = replacetext(colour, " ", "")
+		var/sanitizedcolour = regEx_replacetext(colour, " ", "")
 		coretype = text2path("/obj/item/slime_extract/[sanitizedcolour]")
 	..()
 

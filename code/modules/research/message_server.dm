@@ -191,7 +191,7 @@ var/global/list/obj/machinery/message_server/message_servers = list()
 
 /datum/feedback_variable/proc/add_details(text)
 	if (istext(text))
-		text = replacetext(text, " ", "_")
+		text = regEx_replacetext(text, " ", "_")
 		if (!details)
 			details = text
 		else

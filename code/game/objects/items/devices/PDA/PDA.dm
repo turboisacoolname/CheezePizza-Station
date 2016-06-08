@@ -641,7 +641,7 @@ var/global/list/obj/item/device/pda/PDAs = list()
 					nick = n
 
 			if("Set Channel")
-				var/t = replacetext(trim(stripped_input(U, "Please enter channel", name, chat_channel, 15)), " ", "_")
+				var/t = regEx_replacetext(trim(stripped_input(U, "Please enter channel", name, chat_channel, 15)), " ", "_")
 				if(t)
 					var/datum/chatroom/C = chatchannels[chat_channel]
 					var/ret = C.parse_msg(src, nick, "/join [t]")
@@ -1045,10 +1045,10 @@ var/global/list/obj/item/device/pda/PDAs = list()
 			user << "<span class='warning'>Unable to scan! Paper is blank.</span>"
 			return
 		notehtml = A:info
-		note = replacetext(notehtml, "<BR>", "\[br\]")
-		note = replacetext(note, "<li>", "\[*\]")
-		note = replacetext(note, "<ul>", "\[list\]")
-		note = replacetext(note, "</ul>", "\[/list\]")
+		note = regEx_replacetext(notehtml, "<BR>", "\[br\]")
+		note = regEx_replacetext(note, "<li>", "\[*\]")
+		note = regEx_replacetext(note, "<ul>", "\[list\]")
+		note = regEx_replacetext(note, "</ul>", "\[/list\]")
 		note = html_encode(note)
 		notescanned = 1
 		user << "<span class='notice'>Paper scanned. Saved to PDA's notekeeper.</span>" //concept of scanning paper copyright brainoblivion 2009

@@ -80,7 +80,7 @@ var/list/VVckey_edit = list("key", "ckey")
 			if(process_vars == "Yes")
 				var/list/varsvars = string2listofvars(var_value, O)
 				for(var/V in varsvars)
-					var_value = replacetext(var_value,"\[[V]]","[O.vars[V]]")
+					var_value = regEx_replacetext(var_value,"\[[V]]","[O.vars[V]]")
 
 	return var_value
 
@@ -137,7 +137,7 @@ var/list/VVckey_edit = list("key", "ckey")
 			if(process_vars == "Yes")
 				var/list/varsvars = string2listofvars(var_value, O)
 				for(var/V in varsvars)
-					var_value = replacetext(var_value,"\[[V]]","[O.vars[V]]")
+					var_value = regEx_replacetext(var_value,"\[[V]]","[O.vars[V]]")
 
 	L += var_value
 	switch(alert("Would you like to associate a var with the list entry?",,"Yes","No"))
@@ -309,7 +309,7 @@ var/list/VVckey_edit = list("key", "ckey")
 				if(process_vars == "Yes")
 					var/list/varsvars = string2listofvars(new_var, O)
 					for(var/V in varsvars)
-						new_var = replacetext(new_var,"\[[V]]","[O.vars[V]]")
+						new_var = regEx_replacetext(new_var,"\[[V]]","[O.vars[V]]")
 
 			if(assoc)
 				L[assoc_key] = new_var
@@ -565,7 +565,7 @@ var/list/VVckey_edit = list("key", "ckey")
 				if(process_vars == "Yes")
 					var/list/varsvars = string2listofvars(var_new, O)
 					for(var/V in varsvars)
-						var_new = replacetext(var_new,"\[[V]]","[O.vars[V]]")
+						var_new = regEx_replacetext(var_new,"\[[V]]","[O.vars[V]]")
 
 			O.vars[variable] = var_new
 

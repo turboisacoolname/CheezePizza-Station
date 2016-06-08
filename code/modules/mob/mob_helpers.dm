@@ -96,13 +96,13 @@
 	return newphrase
 
 /proc/lisp(message, intensity=100) //Intensity = how hard will the dude be lisped
-	message = prob(intensity) ? replacetext(message, "f", "ph") : message
-	message = prob(intensity) ? replacetext(message, "t", "ph") : message
-	message = prob(intensity) ? replacetext(message, "s", "sh") : message
-	message = prob(intensity) ? replacetext(message, "th", "hh") : message
-	message = prob(intensity) ? replacetext(message, "ck", "gh") : message
-	message = prob(intensity) ? replacetext(message, "c", "gh") : message
-	message = prob(intensity) ? replacetext(message, "k", "gh") : message
+	message = prob(intensity) ? regEx_replacetext(message, "f", "ph") : message
+	message = prob(intensity) ? regEx_replacetext(message, "t", "ph") : message
+	message = prob(intensity) ? regEx_replacetext(message, "s", "sh") : message
+	message = prob(intensity) ? regEx_replacetext(message, "th", "hh") : message
+	message = prob(intensity) ? regEx_replacetext(message, "ck", "gh") : message
+	message = prob(intensity) ? regEx_replacetext(message, "c", "gh") : message
+	message = prob(intensity) ? regEx_replacetext(message, "k", "gh") : message
 	return message
 
 /proc/stutter(n)
@@ -129,15 +129,15 @@
 	return copytext(sanitize(t),1,MAX_MESSAGE_LEN)
 
 /proc/derpspeech(message, stuttering)
-	message = replacetext(message, " am ", " ")
-	message = replacetext(message, " is ", " ")
-	message = replacetext(message, " are ", " ")
-	message = replacetext(message, "you", "u")
-	message = replacetext(message, "help", "halp")
-	message = replacetext(message, "grief", "grife")
-	message = replacetext(message, "space", "spess")
-	message = replacetext(message, "carp", "crap")
-	message = replacetext(message, "reason", "raisin")
+	message = regEx_replacetext(message, " am ", " ")
+	message = regEx_replacetext(message, " is ", " ")
+	message = regEx_replacetext(message, " are ", " ")
+	message = regEx_replacetext(message, "you", "u")
+	message = regEx_replacetext(message, "help", "halp")
+	message = regEx_replacetext(message, "grief", "grife")
+	message = regEx_replacetext(message, "space", "spess")
+	message = regEx_replacetext(message, "carp", "crap")
+	message = regEx_replacetext(message, "reason", "raisin")
 	if(prob(50))
 		message = uppertext(message)
 		message += "[stutter(pick("!", "!!", "!!!"))]"
